@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctcpwmjmws7lv"]
+
+[ext_resource type="PackedScene" uid="uid://4yvk18wak14d" path="res://Models/IronFence/iron-fence.glb" id="1_t4vt4"]
+[ext_resource type="Material" uid="uid://dqbw2ie4vokx3" path="res://Models/IronFence/metal.tres" id="2_58ndj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c78dp"]
+
+[node name="iron-fence2" instance=ExtResource("1_t4vt4")]
+
+[node name="iron-fence" parent="." index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_58ndj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="iron-fence" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="iron-fence/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.75, 0, 0, 0, 0.1, 0, 0.397587, -0.454041)
+shape = SubResource("BoxShape3D_c78dp")
